@@ -1,0 +1,59 @@
+{
+    "name": "kwaku/laravel-test-mcp",
+    "description": "MCP server for running Laravel Pest and PHPUnit tests from AI assistants like Claude, Cursor, and ChatGPT",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "mcp",
+        "testing",
+        "pest",
+        "phpunit",
+        "ai",
+        "claude",
+        "cursor"
+    ],
+    "homepage": "https://github.com/kwakuOfosuAgyeman/laravel-test-mcp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kwaku Ofosu-Agyeman",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "laravel/mcp": "^0.5.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^3.0",
+        "infection/infection": "^0.29"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kwaku\\LaravelTestMcp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kwaku\\LaravelTestMcp\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kwaku\\LaravelTestMcp\\LaravelTestMcpServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "infection/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
