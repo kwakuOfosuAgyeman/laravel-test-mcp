@@ -10,6 +10,7 @@ use Kwaku\LaravelTestMcp\Tools\{
     WatchTestsTool,
     MutationTestTool,
     CancelOperationTool,
+    GenerateTestTool,
 };
 use Kwaku\LaravelTestMcp\Resources\{
     TestResultsResource,
@@ -29,7 +30,7 @@ class TestMcpServer extends Server
 {
     protected string $name = 'Laravel Test Runner';
 
-    protected string $version = '1.0.0';
+    protected string $version = '1.1.0';
 
     protected string $description = 'Run and analyze Pest/PHPUnit tests via MCP';
 
@@ -43,6 +44,9 @@ class TestMcpServer extends Server
         // Advanced tools
         WatchTestsTool::class,
         MutationTestTool::class,
+
+        // Test generation
+        GenerateTestTool::class,
     ];
 
     protected array $resources = [

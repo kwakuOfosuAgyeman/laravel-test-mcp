@@ -113,6 +113,36 @@ Run mutation testing with Infection to find weak tests.
 - `path` - Path to test
 - `min_msi` - Minimum mutation score indicator
 
+### generate_test
+
+Analyze a Laravel class and generate comprehensive test stubs with optional factory generation.
+
+**Parameters:**
+- `class_path` (required) - Path to the PHP class file (e.g., "app/Models/User.php")
+- `test_type` - Type of test: auto, unit, or feature (default: auto)
+- `include_comments` - Include explanatory comments (default: true)
+
+**Supported Class Types:**
+- **Controllers** → Feature tests with route assertions, auth checks
+- **Models** → Unit tests for relationships, scopes, accessors, mutators + Factory generation
+- **Services** → Unit tests with dependency mocking
+- **FormRequests** → Validation rule tests
+- **Jobs** → Dispatch and handle tests
+- **Middleware** → Request handling tests
+- **Listeners** → Event handling tests
+
+**Example prompts:**
+- "Generate tests for the User model" → `generate_test class_path: "app/Models/User.php"`
+- "Create tests for UserController" → `generate_test class_path: "app/Http/Controllers/UserController.php"`
+- "Generate tests without comments" → `generate_test class_path: "app/Services/PaymentService.php" include_comments: false`
+
+**Output includes:**
+- Class analysis (type, methods, dependencies, Laravel features)
+- Generated Pest test code
+- Factory code (for models)
+- Coverage summary
+- TODOs for manual completion
+
 ## Available Resources
 
 ### test://results/latest
